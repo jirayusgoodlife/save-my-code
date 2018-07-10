@@ -1,12 +1,13 @@
-# save-my-code
-
-#Code Python get OS
-
+Welcome to My Code!
+==================
+> **Edit in web:** https://stackedit.io/editor
+#Code Python get OS type
+```python
 from sys import platform
-
 if platform == "linux" or platform == "linux2":
-    // Todo
+    # Todo in linux
 elif platform == "darwin":
-    // Todo
+    # Todo in OSx
 elif platform == "win32":
-    // Todo
+    # Todo in Windows 
+```
