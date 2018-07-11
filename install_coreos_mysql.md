@@ -3,8 +3,6 @@ Step install CoreOS and Migrate MySQL
 ----
 Table of Content
 ================
-- [Step install CoreOS and Migrate MySQL](#step-install-coreos-and-migrate-mysql)
-- [Table of Content](#table-of-content)
 - [0. change user in database login allow any host [ '%' ]](#0-change-user-in-database-login-allow-any-host--------)
 - [1. install CoreOS](#1-install-coreos)
   * [download iso : https://stable.release.core-os.net/amd64-usr/current/coreos_production_iso_image.iso](#download-iso---https---stablereleasecore-osnet-amd64-usr-current-coreos-production-iso-imageiso)
@@ -14,7 +12,9 @@ Table of Content
   * [install CoreOS](#install-coreos)
 - [2. install docker-compose](#2-install-docker-compose)
 - [3. copy /var/lib/mysql from db old host to CoreOS](#3-copy--var-lib-mysql-from-db-old-host-to-coreos)
-- [4. remove `ib_logfile0` and `ib_logfile1`](#4-remove--ib-logfile0--and--ib-logfile1-)
+  * [in old host](#in-old-host)
+  * [in new host](#in-new-host)
+- [4. remove ib log file](#4-remove-ib-log-file)
 - [5. create docker-compose.yml](#5-create-docker-composeyml)
   * [example docker-compose.yml](#example-docker-composeyml)
 - [6. start with docker-compose up -d](#6-start-with-docker-compose-up--d)
@@ -38,7 +38,7 @@ users:
       groups:
         - sudo 
         - docker
-hostname: mysql-nursing
+hostname: mysql-newhost
 ```
 ## install CoreOS
 ```sh
@@ -52,10 +52,36 @@ curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compos
 chmod +x /opt/bin/docker-compose
 ```
 # 3. copy /var/lib/mysql from db old host to CoreOS
-# 4. remove `ib_logfile0` and `ib_logfile1`
+## in old host
+stop service mysql
 ```sh
-rm ib_logfile0;
-rm ib_logfile1;
+service mysql stop
+```
+cd to /var/lib/
+```sh
+cd /var/lib/
+```
+tar file
+```sh
+tar -zcvf mysql_backup.tar.gz mysql
+```
+send file to core os host
+```sh
+scp mysql_backup.tar.gz username@IPNEWHOST:PATH TO SAVEFILE (Ex. /home/username/)
+```
+## in new host
+un tar file
+```sh
+tar -zxvf mysql_backup.tar.gz
+```
+change name folder
+```sh
+cp -rf mysql mysql_server1
+```
+# 4. remove ib log file
+```sh
+rm mysql_server1/ib_logfile0;
+rm mysql_server1/ib_logfile1;
 ```
 # 5. create docker-compose.yml
 > (if root is setting allow any host remove enviroment setting in file docker-compose.yml or comment by # )
@@ -72,28 +98,6 @@ mysql_server_01:
     - "3308:3306"
   volumes:
     - "/home/iserl/mysql_server1:/var/lib/mysql"
-mysql_server_02:
-  image: mysql:5.6
-  container_name: mysql-server-02
-  restart: always
-  environment:
-    - MYSQL_ROOT_HOST=%
-    - MYSQL_ROOT_PASSWORD=PASSWORD
-  ports:
-    - "3310:3306"
-  volumes:
-    - "/home/iserl/mysql_server2:/var/lib/mysql"
-mysql_server_03:
-  image: mysql:5.6
-  container_name: mysql-server-03
-  restart: always
-  environment:
-    - MYSQL_ROOT_HOST=%
-    - MYSQL_ROOT_PASSWORD=PASSWORD
-  ports:
-    - "3312:3306"
-  volumes:
-    - "/home/iserl/mysql_server3:/var/lib/mysql"
 ```
 # 6. start with docker-compose up -d
 ```sh
