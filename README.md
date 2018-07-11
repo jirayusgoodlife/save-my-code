@@ -14,3 +14,10 @@ elif platform == "darwin":
 elif platform == "win32":  
 # Todo in Windows 
 ```
+
+## Code Python write file
+```python
+file = open('filename.txt','w')
+file.write("content")
+file.close()
+```
