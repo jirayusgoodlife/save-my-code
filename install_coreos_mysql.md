@@ -1,6 +1,24 @@
 Step install CoreOS and Migrate MySQL
 ====
 ----
+Table of Content
+================
+- [Step install CoreOS and Migrate MySQL](#step-install-coreos-and-migrate-mysql)
+- [Table of Content](#table-of-content)
+- [0. change user in database login allow any host [ '%' ]](#0-change-user-in-database-login-allow-any-host--------)
+- [1. install CoreOS](#1-install-coreos)
+  * [download iso : https://stable.release.core-os.net/amd64-usr/current/coreos_production_iso_image.iso](#download-iso---https---stablereleasecore-osnet-amd64-usr-current-coreos-production-iso-imageiso)
+  * [after boot](#after-boot)
+  * [edit file cloud_config.yml](#edit-file-cloud-configyml)
+  * [in file cloud_config.yml](#in-file-cloud-configyml)
+  * [install CoreOS](#install-coreos)
+- [2. install docker-compose](#2-install-docker-compose)
+- [3. copy /var/lib/mysql from db old host to CoreOS](#3-copy--var-lib-mysql-from-db-old-host-to-coreos)
+- [4. remove `ib_logfile0` and `ib_logfile1`](#4-remove--ib-logfile0--and--ib-logfile1-)
+- [5. create docker-compose.yml](#5-create-docker-composeyml)
+  * [example docker-compose.yml](#example-docker-composeyml)
+- [6. start with docker-compose up -d](#6-start-with-docker-compose-up--d)
+----
 # 0. change user in database login allow any host [ '%' ]
 # 1. install CoreOS
 ## download iso : https://stable.release.core-os.net/amd64-usr/current/coreos_production_iso_image.iso
@@ -77,7 +95,7 @@ mysql_server_03:
   volumes:
     - "/home/iserl/mysql_server3:/var/lib/mysql"
 ```
-# 5. start with docker-compose up -d
+# 6. start with docker-compose up -d
 ```sh
 docker-compose up -d
 ```
