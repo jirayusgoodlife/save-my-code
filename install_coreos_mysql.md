@@ -104,4 +104,7 @@ mysql_server_01:
 docker-compose up -d
 ```
 
-> **Test** ` mysql -h IPNEWSERVER -P port -u root -pPASSWORD `
+> **Test Connection** 
+```sh
+mysql -h IPNEWSERVER -P port -u root -pPASSWORD 
+```
