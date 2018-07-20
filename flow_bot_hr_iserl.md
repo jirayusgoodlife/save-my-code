@@ -6,5 +6,4 @@ graph TD
     LF_3 -->|apfp_status = 'Y'| LF_bt3[bot_type = 3]
     LF_3 -->|apfp_status = 'N'| LF_bt4[bot_type = 4]
     LF_3 -->|apfp_status = 'E'| LF_bt6[bot_type = 6]
-    
 ```
