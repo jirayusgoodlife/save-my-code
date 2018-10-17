@@ -32,6 +32,7 @@ vi cloud_config.yml
 ```
 ## in file cloud_config.yml
 ```vi
+#cloud-config
 users:
     - name: username
       passwd: TEXT IN THIS FILE
