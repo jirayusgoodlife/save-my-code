@@ -45,11 +45,17 @@ hostname: mysql-newhost
 ```sh
 sudo coreos-install -d /dev/sda -C stable -c cloud_config.yml
 ```
+## if error GPG Key use new coreos-install
+```sh
+wget https://raw.githubusercontent.com/coreos/init/master/bin/coreos-install
+chomd +x coreos-install
+sudo ./coreos-install -d /dev/sda -C stable -c cloud_config.yml
+```
 # 2. install docker-compose     
 ```sh
 sudo su -
 mkdir -p /opt/bin
-curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m`  > /opt/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.24.1/docker-compose-`uname -s`-`uname -m`  > /opt/bin/docker-compose
 chmod +x /opt/bin/docker-compose
 ```
 # 3. copy /var/lib/mysql from db old host to CoreOS
