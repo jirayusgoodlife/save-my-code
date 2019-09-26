@@ -49,7 +49,7 @@ sudo coreos-install -d /dev/sda -C stable -c cloud_config.yml
 ```sh
 sudo su -
 mkdir -p /opt/bin
-curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m`  > /opt/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m`  > /opt/bin/docker-compose
 chmod +x /opt/bin/docker-compose
 ```
 # 3. copy /var/lib/mysql from db old host to CoreOS
