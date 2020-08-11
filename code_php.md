@@ -1,11 +1,8 @@
 Table of Content
 ================
-- [Code get next value (number only)](#code-get-next-value-(-number-only)-)
-- [Code get next value (a-z only)](#code-get-next-value-(-a-z-only)-)
-- [Code get next value (A-Z only)](#code-get-next-value-(A-Z-a-z-only)-)
-- [Code get next value (ก-ฮ only)](#code-get-next-value-(ก-ฮ-----only)-)
 
-## Code get next value (number only)
+
+## Code get next value number only
 ```php  
 function get_value($value,$length_limit=0){
     $value = trim($value);
@@ -106,5 +103,5 @@ function get_value($value, $length_limit = 0)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5NTE5MzYyNl19
+eyJoaXN0b3J5IjpbMTY0MzQ3NjYyMF19
 -->
