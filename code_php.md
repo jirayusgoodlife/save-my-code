@@ -10,6 +10,7 @@ Table of Content
 function get_value($value,$length_limit=0){
     $value = trim($value);
     if($value == ""){
+        return "";
     }
     if(!preg_match("/[0-9]/",$value)){
         return "";
