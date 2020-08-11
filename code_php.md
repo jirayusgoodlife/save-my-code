@@ -1,7 +1,6 @@
 Table of Content
 ================
 
-
 ## Code get next value number only
 ```php  
 function get_value($value,$length_limit=0){
@@ -19,7 +18,7 @@ function get_value($value,$length_limit=0){
 }
 ```
 
-## Code get next value (a-z only)
+## Code get next value a to z only
 ```php  
 function get_value($value,$length_limit=0){
     $value = trim($value);
@@ -36,7 +35,7 @@ function get_value($value,$length_limit=0){
 }
 ```
 
-## Code get next value (A-Z only)
+## Code get next value A to Z uppercase only
 ```php  
 function get_value($value,$length_limit=0){
     $value = trim($value);
@@ -53,7 +52,7 @@ function get_value($value,$length_limit=0){
 }
 ```
 
-## Code get next value (ก-ฮ only)
+## Code get next value ก-ฮ thailuage only
 ```php  
 function get_value($value, $length_limit = 0)
 {
@@ -103,5 +102,5 @@ function get_value($value, $length_limit = 0)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY0MzQ3NjYyMF19
+eyJoaXN0b3J5IjpbMzE5NDE1NDA3XX0=
 -->
