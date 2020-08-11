@@ -1,5 +1,10 @@
 Table of Content
 ================
+- [Code get next value number only](#code-get-next-value-number-only)
+- [Code get next value a to z only](#code-get-next-value-a-to-z-only)
+- [Code get next value A to Z uppercase only](#code-get-next-value-a-to-z-uppercase-only)
+- [Code get next value thai language only](#code-get-next-value-thai-language-only)
+
 
 ## Code get next value number only
 ```php  
@@ -52,7 +57,7 @@ function get_value($value,$length_limit=0){
 }
 ```
 
-## Code get next value ก-ฮ thailuage only
+## Code get next value thai language only
 ```php  
 function get_value($value, $length_limit = 0)
 {
@@ -102,5 +107,5 @@ function get_value($value, $length_limit = 0)
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE5NDE1NDA3XX0=
+eyJoaXN0b3J5IjpbODEyNzM0Mjg3XX0=
 -->
