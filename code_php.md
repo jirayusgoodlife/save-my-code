@@ -1,10 +1,13 @@
 Table of Content
 ================
-- [Code get next value number only](#code-get-next-value-number-only)
-- [Code get next value a to z only](#code-get-next-value-a-to-z-only)
-- [Code get next value A to Z uppercase only](#code-get-next-value-a-to-z-uppercase-only)
-- [Code get next value thai language only](#code-get-next-value-thai-language-only)
-
+- [Code get string next value](#code-get-string-next-value)
+  * [Code get next value number only](#code-get-next-value-number-only)
+  * [Code get next value a to z only](#code-get-next-value-a-to-z-only)
+  * [Code get next value A to Z uppercase only](#code-get-next-value-a-to-z-uppercase-only)
+  * [Code get next value thai language only](#code-get-next-value-thai-language-only)
+- [Code Ramdom String](#code-ramdom-string)
+  * [Code generate ramdom string](#code-generate-ramdom-string)
+  
 # Code get string next value
 > ตัวอย่างโปรแกรมในการหาค่าถัดไปของข้อมูล
 ## Code get next value number only
@@ -143,6 +146,6 @@ function get_value($length = 64, $is_use_number = true, $is_use_lowercase = true
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTE4ODE1MDIsNDAzMjA3MjIsODEyNz
-M0Mjg3XX0=
+eyJoaXN0b3J5IjpbMjEwNzY1NTk4Myw0MDMyMDcyMiw4MTI3Mz
+QyODddfQ==
 -->
