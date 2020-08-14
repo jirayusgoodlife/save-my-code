@@ -5,7 +5,8 @@ Table of Content
 - [Code get next value A to Z uppercase only](#code-get-next-value-a-to-z-uppercase-only)
 - [Code get next value thai language only](#code-get-next-value-thai-language-only)
 
-
+# Code get string next value
+> ตัวอย่างโปรแกรมในการหาค่าถัดไปของข้อมูล
 ## Code get next value number only
 ```php  
 function get_value($value,$length_limit=0){
@@ -141,5 +142,5 @@ function get_value($length = 64, $is_use_number = true, $is_use_lowercase = true
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTYxNDcxMjQsODEyNzM0Mjg3XX0=
+eyJoaXN0b3J5IjpbNDAzMjA3MjIsODEyNzM0Mjg3XX0=
 -->
