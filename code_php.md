@@ -106,7 +106,8 @@ function get_value($value, $length_limit = 0)
     return mb_substr($next_value, -$length_limit, null, 'utf-8');
 }
 ```
-
+# Code Ramdom String
+> ตัวอย่างโปรแกรมในการสุ่มค่าข้อมูลซึ่งทำได้ทั้งตัวเลข ตัวอักษรภาษาอังกฤษทั้งใหญ่ เล็ก และตัวอักษรไทย
 ## Code generate ramdom string
 
 ``` php
@@ -142,5 +143,6 @@ function get_value($length = 64, $is_use_number = true, $is_use_lowercase = true
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDAzMjA3MjIsODEyNzM0Mjg3XX0=
+eyJoaXN0b3J5IjpbLTIxMTE4ODE1MDIsNDAzMjA3MjIsODEyNz
+M0Mjg3XX0=
 -->
