@@ -106,6 +106,40 @@ function get_value($value, $length_limit = 0)
 }
 ```
 
+## Code generate ramdom string
+
+``` php
+function get_value($length = 64, $is_use_number = true, $is_use_lowercase = true, $is_use_uppercase = true, $is_use_thai_str = false)  
+{  
+  if ($length < 1) {  
+  return "";  
+  }  
+  $number = "0123456789";  
+  $lowercase = "abcdefghijklmnopqrstuvwxyz";  
+  $uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
+  $thai_str = "กขคงจฉชซณญฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮ";  
+  $characters = '';  
+ if ($is_use_number) {  
+  $characters .= $number;  
+  }  
+  if ($is_use_lowercase) {  
+  $characters .= $lowercase;  
+  }  
+  if ($is_use_uppercase) {  
+  $characters .= $uppercase;  
+  }  
+  if ($is_use_thai_str) {  
+  $characters .= $thai_str;  
+  }  
+  
+  $charactersLength = mb_strlen($characters, 'utf-8');  
+  $randomString = '';  
+ for ($i = 0; $i < $length; $i++) {  
+  $randomString .= mb_substr($characters, rand(0, $charactersLength - 1), 1, 'utf-8');  
+  }  
+  return $randomString;  
+}
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODEyNzM0Mjg3XX0=
+eyJoaXN0b3J5IjpbLTE0OTYxNDcxMjQsODEyNzM0Mjg3XX0=
 -->
